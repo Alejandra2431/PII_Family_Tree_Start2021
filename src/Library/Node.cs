@@ -6,8 +6,10 @@ namespace Library
 {
     public class Node
     {
+        public void Accept(Visitor visitor){
+            visitor.SumaEdades(this);
+        }
         private Persona persona;
-
 
         private List<Node> children = new List<Node>();
 

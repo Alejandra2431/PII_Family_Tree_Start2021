@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Library
+{
+    public class Visitor
+    {
+        public int SumaEdades(Node node){
+            int suma = node.Persona.edad;
+            if (node.Children.Count!=0)
+            {
+                foreach (Node child in node.Children)
+                {
+                    suma += this.SumaEdades(child);
+                }
+            }
+            return suma;
+        }
+    }
+}

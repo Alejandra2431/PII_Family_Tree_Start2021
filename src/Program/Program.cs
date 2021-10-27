@@ -15,6 +15,7 @@ namespace Program
             Persona persona5 = new Persona("Juan5", 22);
             Persona persona6 = new Persona("Juan6", 22);
             Persona persona7 = new Persona("Juan7", 22);
+            Persona persona8 = new Persona("Juan8", 22);
 
             Node n1 = new Node(persona1);
             Node n2 = new Node(persona2);
@@ -23,6 +24,7 @@ namespace Program
             Node n5 = new Node(persona5);
             Node n6 = new Node(persona6);
             Node n7 = new Node(persona7);
+            Node n8 = new Node(persona8);
 
             n1.AddChildren(n2);
             n1.AddChildren(n3);
@@ -32,13 +34,12 @@ namespace Program
 
             n3.AddChildren(n6);
             n3.AddChildren(n7);
-
-            foreach (Node node in )
-            {
-                
-            }
+            n3.AddChildren(n8);
 
             // visitar el árbol aquí
+            Visitor visitor = new Visitor();
+            n1.Accept(visitor);
+            Console.Write(visitor.SumaEdades(n1));
             
         }
     }
